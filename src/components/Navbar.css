@@ -1,0 +1,66 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: var(--bg-nav);
+    color: var(--text-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #CBD5E1; /* Un gris claro para los inactivos */
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    color: var(--primary);
+  }
+  
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Responsividad básica para ocultar links en móviles por ahora */
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none;
+    }
+  }
