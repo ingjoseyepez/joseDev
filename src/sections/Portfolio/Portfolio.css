@@ -1,0 +1,144 @@
+/* src/sections/Portfolio/Portfolio.css */
+.portfolio {
+    padding: 6rem 2rem;
+    background-color: var(--bg-main);
+  }
+  
+  .portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .portfolio-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+  }
+  
+  /* Contenedor de Filtros (Pills) */
+  .filter-bar {
+    background-color: #E2E8F0;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .filter-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .filter-btn:hover {
+    color: var(--text-dark);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--primary);
+    color: var(--text-light);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+  }
+  
+  /* Distribución de la grilla */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Paginación */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 4rem;
+  }
+  
+  .page-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E2E8F0;
+    background-color: #FFFFFF;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .page-btn:hover:not(.active) {
+    background-color: #F1F5F9;
+    border-color: #CBD5E1;
+  }
+  
+  .page-btn.active {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-color: var(--primary);
+  }
+  
+  .page-btn.text-btn {
+    color: var(--text-muted);
+  }
+  /* Estado deshabilitado para los botones de paginación */
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: #F1F5F9;
+  }
+  /* --- RESPONSIVIDAD --- */
+  @media (max-width: 968px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .portfolio {
+      padding: 4rem 1.5rem;
+    }
+    
+    .portfolio-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .filter-bar {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      flex-grow: 1;
+      text-align: center;
+    }
+  
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }

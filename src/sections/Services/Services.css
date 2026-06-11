@@ -1,0 +1,125 @@
+/* src/sections/Services/Services.css */
+.services {
+  background-color: #f1f5f9; /* Fondo gris muy suave para separar secciones */
+  padding: 6rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado de Sección */
+.services-header {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.services-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+/* Ajuste para el tamaño del icono de FontAwesome */
+.fa-icon {
+  font-size: 1.5rem; /* Equivalente a 24px */
+}
+
+/* Línea decorativa debajo del título del diseño original */
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  margin-top: 0.75rem;
+  border-radius: 2px;
+}
+
+/* Distribución de las Tarjetas */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Tarjeta Individual */
+.service-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02),
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto Hover Profesional */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  border-color: #ddd6fe; /* Borde sutilmente morado al pasar el cursor */
+}
+
+/* Contenedor del Icono */
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: #eef2f6; /* Fondo suave del icono */
+  color: var(--primary); /* El color de tu marca */
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon-box {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.service-card-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 968px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 columna en teléfonos */
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+}
