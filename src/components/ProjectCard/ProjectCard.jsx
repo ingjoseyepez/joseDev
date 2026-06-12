@@ -2,9 +2,10 @@
 import React from 'react';
 import './ProjectCard.css';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onClick }) {
   return (
-    <article className="project-card">
+    // Añadimos el evento onClick aquí
+    <article className="project-card" onClick={onClick} style={{ cursor: 'pointer' }}>
       <div className="project-card-image-box">
         <img src={project.image} alt={project.title} className="project-card-img" />
       </div>

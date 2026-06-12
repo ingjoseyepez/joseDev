@@ -1,0 +1,215 @@
+/* src/components/ProjectModal/ProjectModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Contenedor Principal Ensanchado y con Grid Horizontal */
+  .modal-content.horizontal-layout {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 920px; /* Más ancho para dar espacio a la descripción */
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    
+    /* Activamos las dos columnas */
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr; 
+    align-items: stretch; /* Hace que ambas columnas midan lo mismo de alto */
+    
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #E2E8F0;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s ease;
+  }
+  
+  .modal-close-btn:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-color: var(--primary);
+  }
+  
+  /* Ajuste de la columna de la imagen */
+  .modal-image-box {
+    width: 100%;
+    height: 100%; /* Ocupa el 100% de la altura de la fila */
+    min-height: 350px;
+    overflow: hidden;
+  }
+  
+  .modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  /* Ajuste de la columna de contenido */
+  .modal-body {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:采购; /* Distribuye el contenido verticalmente */
+  }
+  
+  .modal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .modal-year {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-right: 30px;
+  }
+  
+  .modal-title {
+    font-size: 2rem; /* Título un poco más grande e imponente */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+  
+  /* Zona de descripción optimizada para textos largos */
+  .modal-desc-container {
+    max-height: 200px; /* Si tu texto es gigantesco, activará un scroll interno limpio */
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Estilo del scrollbar para que se vea profesional */
+  .modal-desc-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  .modal-desc-container::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 4px;
+  }
+  
+  .modal-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  
+  /* Botones inferiores */
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto; /* Empuja los botones siempre al fondo de la modal */
+  }
+  
+  .modal-btn {
+    flex: 1;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  
+  .btn-live {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: 1px solid var(--primary);
+  }
+  
+  .btn-live:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+  
+  .btn-github {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 1px solid #CBD5E1;
+  }
+  
+  .btn-github:hover {
+    background-color: #F8FAFC;
+    border-color: var(--text-dark);
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  
+  /* --- CRUCIAL: RESPONSIVIDAD ---
+     En pantallas medianas y pequeñas rompemos las dos columnas 
+     y vuelve a formato vertical para que no se aplaste el contenido. */
+  @media (max-width: 768px) {
+    .modal-overlay {
+      padding: 1rem;
+    }
+  
+    .modal-content.horizontal-layout {
+      grid-template-columns: 1fr; /* Una sola columna */
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  
+    .modal-image-box {
+      height: 220px;
+      min-height: auto;
+    }
+  
+    .modal-body {
+      padding: 1.5rem;
+    }
+  
+    .modal-title {
+      font-size: 1.5rem;
+    }
+    
+    .modal-desc-container {
+      max-height: none; /* Quitamos el límite de altura en móvil */
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  }
