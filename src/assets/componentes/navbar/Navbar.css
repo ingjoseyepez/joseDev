@@ -1,0 +1,76 @@
+/* Estilos para el TopAppBar Shell */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(6, 14, 32, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #dee5ff;
+  font-family: var(--font-headline);
+  letter-spacing: -0.05em;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.nav-links {
+  color: rgba(222, 229, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: var(--font-headline);
+  letter-spacing: -0.05em;
+}
+
+.nav-links:hover {
+  color: #dee5ff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle-btn {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transform: scale(0.95);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(31, 43, 73, 0.5);
+}
+
+.theme-toggle-btn span {
+  color: #a3a6ff;
+  display: block;
+}
