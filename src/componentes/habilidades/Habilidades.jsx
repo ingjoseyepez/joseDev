@@ -22,8 +22,7 @@ const Habilidades = () => {
         {/* Encabezado estructurado según el CSS */}
         <div className="section-header">
           <div className="title-wrapper">
-            <h2 className="section-title">What Makes Me Different</h2>
-            <div className="title-underline"></div>
+            <h2 className="section-title">¿Qué me hace diferente?</h2>       
           </div>
           
           <p className="section-subtitle">

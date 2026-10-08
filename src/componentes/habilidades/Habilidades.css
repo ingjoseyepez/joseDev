@@ -5,7 +5,8 @@
   }
   
   .value-container {
-    max-width: 80rem;
+    padding: 3rem 1rem;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -29,21 +30,16 @@
   .title-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
+    }
   
   .section-title {
     font-size: 2.25rem;
     font-family: var(--font-headline);
     font-weight: bold;
     color: var(--on-surface);
+    border-bottom: 2.5px solid #89cda2;
   }
-  
-  .title-underline {
-    height: 0.25rem;
-    width: 5rem;
-    background-color: var(--primary);
-  }
+
   
   .section-subtitle {
     color: var(--on-surface-variant);

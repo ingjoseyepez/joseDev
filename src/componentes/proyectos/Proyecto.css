@@ -1,9 +1,12 @@
 .projects-section {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-
+.projects-header{
+  display: flex;
+  justify-content: space-between;
+}
 .section-title {
   font-size: 2rem;
   color: #272E42;
@@ -16,4 +19,40 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+/* Barra de navegación de filtros */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--surface-container-high, #121b2d);
+  color: var(--on-surface-variant, #a5adc6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: rgba(70, 71, 211, 0.2);
+  color: #dee5ff;
+  border-color: var(--primary, #6264f6);
+}
+
+/* Estado seleccionado / activo */
+.filter-btn.active {
+  background-color: var(--primary, #6264f6);
+  color: #ffffff;
+  border-color: var(--primary, #6264f6);
+  box-shadow: 0 4px 14px rgba(98, 100, 246, 0.4);
 }
